@@ -24,6 +24,7 @@ class Order < ActiveRecord::Base
     #4111111111111111
     # Create a new credit card object
     @credit_card = ActiveMerchant::Billing::CreditCard.new(
+      :type       => card_type,
       :number     => card_number,
       :month      => card_expires_on.month,
       :year       => card_expires_on.year,
